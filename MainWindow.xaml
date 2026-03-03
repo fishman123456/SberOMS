@@ -1,0 +1,42 @@
+﻿<Window x:Class="SberOmsRates.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Курсы ОМС Сбербанк" Height="260" Width="420">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0"
+                   Text="Курсы ОМС Сбербанк (руб/г)"
+                   FontWeight="Bold"
+                   Margin="0,0,0,10"/>
+
+        <StackPanel Grid.Row="1" Orientation="Vertical" Margin="0,0,0,10">
+            <TextBlock Text="Золото:" FontWeight="Bold" Margin="0,0,0,3"/>
+            <TextBlock Name="GoldBuyLabel"  Text="Покупка: -- ₽/г"  Margin="10,0,0,2"/>
+            <TextBlock Name="GoldSellLabel" Text="Продажа: -- ₽/г" Margin="10,0,0,5"/>
+
+            <TextBlock Text="Серебро:" FontWeight="Bold" Margin="0,5,0,3"/>
+            <TextBlock Name="SilverBuyLabel"  Text="Покупка: -- ₽/г" Margin="10,0,0,2"/>
+            <TextBlock Name="SilverSellLabel" Text="Продажа: -- ₽/г" Margin="10,0,0,0"/>
+        </StackPanel>
+
+        <ProgressBar Grid.Row="2"
+                     Name="ProgressBar"
+                     Height="6"
+                     IsIndeterminate="True"
+                     Visibility="Collapsed"/>
+
+        <Button Grid.Row="3"
+                Name="UpdateButton"
+                Content="Обновить"
+                Width="100"
+                Height="30"
+                HorizontalAlignment="Left"
+                Click="UpdateButton_Click"/>
+    </Grid>
+</Window>
